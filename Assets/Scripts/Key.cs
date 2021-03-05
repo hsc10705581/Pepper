@@ -15,8 +15,11 @@ public class Key : MonoBehaviour
     void Start()
     {
         SnakeHead = GameObject.Find("SnakeHead").GetComponent<SnakeManager>();
-        PresentX = int.Parse(transform.position.x.ToString()) + 10;
-        PresentY = int.Parse(transform.position.y.ToString()) + 5;
+        // PresentX = int.Parse(transform.position.x.ToString()) + 10;
+        // PresentY = int.Parse(transform.position.y.ToString()) + 5;
+        PresentX = int.Parse(transform.position.x.ToString());
+        PresentY = int.Parse(transform.position.y.ToString());
+        MapManager.AddObject(PresentX, PresentY, Cell.CellObjectType.Key);  // 单元格添加物体
     }
 
     // Update is called once per frame
