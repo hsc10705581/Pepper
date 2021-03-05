@@ -29,7 +29,8 @@ public class KeyManager : MonoBehaviour
         SpecialChild = m_Password[BoxNumber] - '0';
         if (m_Password.Length == 4 && m_Password == SetPassword)
         {
-            SnakeHead.GetComponent<MapManager>().EasyMap[Door.GetComponent<Door>().PresentX, Door.GetComponent<Door>().PresentY] = 0;
+            // SnakeHead.GetComponent<MapManager>().EasyMap[Door.GetComponent<Door>().PresentX, Door.GetComponent<Door>().PresentY] = 0;
+            MapManager.RemoveObject(Door.GetComponent<Door>().PresentX, Door.GetComponent<Door>().PresentY);
             Destroy(Door);
             for (int i = 0; i < transform.childCount; i++)
             {
